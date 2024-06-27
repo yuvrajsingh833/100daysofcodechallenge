@@ -1,0 +1,154 @@
+
+# print("hello world")
+# print ("hello students," , "how are yopu?")
+# print(42)
+# print(4+6)
+
+#VARIABLES
+''' 
+NAME="Yuvraj"
+Age=22
+price_no=42.25
+
+print(NAME)
+
+print(Age)
+print(price_no) '''
+
+#PRINT SUM
+
+''' a=15
+b=45
+sum=a+b
+print(sum)
+
+#print difference
+
+a=45
+b=78
+diff=a-b
+print(diff) '''
+
+#OPERATORS
+
+#1. Arithmetic operator
+
+''' a=12
+b=7
+sum=a+b
+diff=a-b
+multiply=a*b
+divide=a/b
+reminder=a%b
+power=a**b
+print(sum)
+print(diff)
+print(multiply)
+print(divide)
+print(reminder)
+print(power) '''
+
+#2. Relational operator
+
+''' a=10
+b=20
+print(a==b)
+print(a!=b)
+print(a>b)
+print(a<b)
+print(a<=b)
+print(a>=b) '''
+
+# 3. Assignment operator
+
+''' a=45
+a+=10
+print(a)
+a-=20
+print(a)
+a*=10
+print(a)
+a/=5
+print(a)
+a%=4
+print(a)
+a**=4
+print(a)
+ '''
+ 
+'''  #4. Logical Operator
+ 
+ a=True
+ b=False
+ print (not a)
+ print(a and b)
+ print(a and b)
+ 
+  '''
+
+
+#Type Conversion and Type Casting
+
+#1. Type conversion(automatically)
+
+''' a=4
+b=6.5
+sum=a+b
+print(sum) '''
+
+#2. Type Casting(Manually)
+''' a="580"
+a=float(a)
+print(type(a))
+b=485
+sum=a+b
+print(sum) '''
+
+#Inputs in Python
+
+''' name=input("Enter your name ")
+age=int(input("Enter your age"))
+percentage=float(input("Enter your percentage"))
+
+print("Welcome",name)
+print("Your age is",age)
+print("Your percentage",percentage)
+print(type(name))
+print(type(age))
+print(type(percentage))
+'''
+ 
+
+#PRACTICE QUESTION
+
+# 1. Write a program that take 2 inputs number from user and sadd them and show output
+
+''' num1=float(input("Enter your 1st number "))
+num2=float(input("Enter your 2nd number "))
+
+sum=num1+num2
+print("Sum is",sum) '''
+
+
+
+ # 2. Write a program that take input number side of square from the user and give it area
+ 
+''' side=float(input("Enter the dimesnion of side of square "))
+area=side*side
+print("Area of square is ", area) '''
+
+#3.  Write a program that take floating input number side of square from the user and give it average
+
+''' num1=float(input("Enter your 1st number "))
+num2=float(input("Enter your 2nd number "))
+
+average=(num1+num2)/2
+print("Average is",average) '''
+ 
+#4. Write a program that input 2 int number a and b. print True if a is greater or equal to b, if not False
+
+''' a=int(input("Enter your 1st number "))
+b=int(input("Enter your 2nd number "))
+
+print(a>=b) '''
+
