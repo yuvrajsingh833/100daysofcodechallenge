@@ -1,0 +1,73 @@
+#Set
+
+''' number={1,2,3,4}
+number1={1,2,2,3,"hello","World","Hello",4.65,True}
+print(number)
+print(number1)
+print(type(number1))
+
+null_set=set() #null set syntex
+print(null_set)
+print(type(null_set)) '''
+
+#Set Methods
+''' 
+collection={1,2,3,"hello","Yuvraj","world",4.6,2}
+
+print(collection)
+print(type(collection))
+print(len(collection))
+
+collection.add(9.5)
+collection.add("Singh Rathore")
+print(collection)
+print(type(collection))
+print(len(collection))
+ '''
+
+''' print(collection.remove(2))
+print(collection.remove(3))
+print(collection)
+print(type(collection))
+print(len(collection))
+
+print(collection.clear())
+print(len(collection))  '''
+
+''' print(collection.pop())
+print(collection.pop())
+print(collection) '''
+
+''' set1={1,2,3,4,5}
+set2={4,5,6,7,8}
+
+print(set1.union(set2))
+print(set1.intersection(set2)) '''
+
+#Practice Questions
+
+#1. You are given a list of subjects for students. Assume one classroom is required for 1
+#subject. How many classrooms are needed by all students.
+# "python",“java",“C++",“python",“javascript",
+# “java",“python",“java",“C++",“C 
+
+''' set={"python","java","C++","python","javascript","java","python","java","C++","C" }
+print(set)
+print("Total number of class required is: ", len(set)) '''
+
+#2. Figure out a way to store 9 & 9.0 as separate values in the set.
+#(You can take help of built-in data types)
+
+#1st method
+''' number={9,"9.0"}
+
+print(number)
+ '''
+#2nd method
+
+''' number2={
+    ("int",9),
+    ("float",9.0)
+}
+
+print(number2) '''
