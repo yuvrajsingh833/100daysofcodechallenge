@@ -1,0 +1,81 @@
+#100daysofcodechallenge
+
+#day1(Conditional Statement Practice Question)-03/06/2024
+
+''' 1. Grade students based on marks
+marks >= 90, grade =
+“A”
+90 > marks >= 80, grade =
+“B”
+80 > marks >= 70, grade =
+“C”
+70 > m
+A
+arks
+p
+, gra
+n
+de =
+“D” '''
+
+
+''' marks=int(input("Enter Your Marks: "))
+
+if(marks>=90):
+    grade="A"
+elif(marks>=80 and marks<90):
+    garde="B"
+elif(marks>=70 and marks<80):
+    garde="C"
+else:
+    garde="D" 
+    
+    
+print("Your grade is: ", garde)    '''     
+
+
+#Nesting Conditional Statement
+''' 
+age=85
+
+if(age>=18):
+    if(age>70):
+      print("Cannot drive")
+    else:
+        print("Can drive")  
+else:
+    print("Cannot Drive")    
+ '''
+ 
+#2. WAP to check if a number entered by the user is odd or even
+
+''' number=int(input("Enter the number: "))
+
+if(number%2==0):
+    print("Number is even") 
+else:
+    print("Odd number")     '''
+    
+#3. WAP to find the greatest of 3 numbers entered by the user  
+
+''' num1=int(input("Enter the number 1: "))
+num2=int(input("Enter the number 2: "))   
+num3=int(input("Enter the number 3: ")) 
+
+if(num1>num2 and num1>num3):
+    print("Number 1 is greatest of 3 numbers")
+elif(num2>=num3):
+    print("Number 2 is greatest of 3 numbers")
+else:
+    print("Number 3 is greatest of 3 numbers")    '''    
+    
+#4.WAP to check number is multiple of  7 or not
+
+''' number=int(input("Enter the number: "))
+if(number%7==0):
+    print("Number is multiple of 7")
+else:
+    print("Number is not multiple of 7")         '''
+    
+    
+    
