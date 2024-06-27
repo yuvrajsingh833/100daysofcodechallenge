@@ -1,0 +1,121 @@
+#LIST
+
+''' marks1=94
+marks2=98.14
+marks3=78
+marks4=48.12574
+address="Delhi"
+age=14
+
+marks=[94,98.14,78,75.12574,"Delhi",14]
+
+print(marks)    
+print(type(marks))
+print(len(marks))
+
+
+student=["Yuvraj",8.57,22,"Rajasthan"]
+print(student)
+print(student[0])
+print(student[1]) '''
+
+#List is  mutable but string is immutable
+
+''' student=["Karan",19,9.95,"Rajasthan"]
+print(student)
+student[0]="Arjun"
+print(student) '''
+
+
+#List Slicing
+''' 
+student_marks=[46,48,49,63,84,95,75]
+print(student_marks[1:4])
+print(student_marks[:6])
+print(student_marks[2:])
+print(student_marks[-4:-1]) '''
+
+#LIST METHODS
+
+''' list=[3,1,2]
+
+#print(list.append(4))
+
+list.append(4)
+print(list)
+
+print(list.sort())
+list.sort()
+print(list)
+
+list.sort(reverse=True)
+print(list)
+
+list.reverse()
+print(list)
+
+list.insert(2,2)
+print(list)
+
+list.remove(2)
+print(list)
+
+list.pop(2)
+print(list)
+
+list2=["banana", "litchi","apple","grapes"]
+list2.sort()
+print(list2) '''
+
+
+#Practice Questions
+
+#1. WAP to ask the user to enter names of their 3 favorite movies & store them in a list
+#1st method
+
+''' movies=[]
+
+mov1=input("Enter your 1st Favourite movie name: ")
+mov2=input("Enter your 2nd Favourite movie name: ")
+mov3=input("Enter your 3rd Favourite movie name: ")
+
+movies.append(mov1)
+movies.append(mov2)
+movies.append(mov3)
+print(movies)
+
+#2nd Method
+
+
+movies=[]
+
+movies.append(input("Enter your 1st Favourite movie name: "))
+movies.append(input("Enter your 2nd Favourite movie name: "))
+movies.append(input("Enter your 3rd Favourite movie name: "))
+
+
+print(movies) '''
+
+#2. WAP to check if a list contains a palindrome of elements. (Hint: use copy( ) method)
+# [1, 2, 3, 2, 1] [1,“abc”,“abc”,1]
+
+# list1=[1, 2, 3, 2, 1]
+
+# list1_copy=list1.copy()
+# list1_copy.reverse()
+
+# if(list1==list1_copy):
+#     print("Yes, It is palindrome")
+# else:
+#     print("No, it is not a palindrome")
+    
+# list2=[1,"abc","abc",1]
+
+# list2_copy=list2.copy()
+# list2_copy.reverse()
+
+# if(list2==list2_copy):
+#     print("Yes, It is palindrome")
+# else:
+#     print("No, it is not a palindrome")
+
