@@ -1,0 +1,54 @@
+#TUPLES
+
+''' tup=(25,15,78,96)
+print(type(tup))
+print(tup[2])
+print(tup[0])
+
+
+#always writye , if there is single element
+tup1=(1,)
+print(type(tup1))
+print(tup1)
+
+tup2=(1,5.8,48,"apple")
+tup2[2]=45 # Not allowed
+
+print(tup2)
+ '''
+
+
+#Tuple slicing
+''' 
+tuple=(1,2,5,6,5)
+print(tuple[2:5])
+print(tuple[:4])
+print(tuple[-3:-1])
+print(tuple[1:])
+ '''
+ 
+ 
+ 
+#Tuple Methods
+ 
+''' tup=(1,2,6,8,9,4,5,2,6)
+print(tup.index(6))
+print(tup.index(4))
+print(tup.index(2))
+print(tup.count(2))
+print(tup.count(4)) '''
+
+
+#Practice Question
+
+#1.WAP to count the number of students with the “A” grade in the following tuple.
+#(”C”,“D”,“A”,“A”,“B”,“B”,“A”)
+grade=("C","D","A","A","B","B","A")
+print(grade.count("A"))
+
+#2.Store the above values in a list & sort them from “A” to “
+
+grade=["C","D","A","A","B","B","A"]
+grade.sort()
+print(grade)
+
