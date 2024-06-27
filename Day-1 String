@@ -1,0 +1,107 @@
+
+#STRING
+
+#Ways to define string(3 ways)
+
+''' str1="Yuvraj Singh"
+str2='How are you?'
+str3="""what are you doing?"""
+
+str="hello ji's" '''
+
+''' string="hello, how are you? \nwhere are you from?"
+string2="hello, how are you? \twhere are you from?"
+print(string)
+print(string2) '''
+
+#Concatenation and length of string
+
+''' str1="yuvraj"
+print("length of str1 is: " ,len(str1))
+str2="singh"
+print("length of str2 is: " ,len(str2))
+final_str=str1+ " "+ str2
+print(final_str)
+print("length of final_str is: " ,len(final_str))
+ '''
+ 
+#Indexing-Position number
+ 
+''' str="Yuvraj Singh"
+ch=str[1]
+print(ch)
+print(str[5]) '''
+
+#Slicing- Accesing part of string
+#1. Possitive index
+
+''' str="Yuvraj Singh"
+print(str[1:5])
+print(str[:8])
+print(str[2:])
+print(str[0:len(str)])
+print(str[0:13]) '''
+
+#2.Negative Index
+
+''' str="apple"
+print(str[-3:-1])
+print(str[-3:len(str)])
+print(str[-4:-1])
+ '''
+ 
+#String Function
+
+''' str="i am studying python from apna college"
+print(str.endswith("e"))
+print(str.startswith("I"))
+print(str.capitalize())
+str=str.capitalize()
+print(str.replace("python","java"))
+print(str.upper())
+print(str.lower())
+print(str.find("y"))
+print(str.count("u"))
+print(str)
+ '''
+ 
+#PRACTICE QUESTIONS
+
+#1. WAP to take input from user first name and calculate length of first name
+
+''' name=input("Enter Your First Name: ")
+print("length of first name is :",len(name)) '''
+
+#2. WAP to find the occurrence of ‘$’ in a String.
+
+''' str="I am $ how are you $, what are u doing $"
+print(str.count("$")) '''
+
+#CONDITIONAL STATEMENT
+
+''' light="green"
+
+if(light=="yellow"):
+    print("wait")
+elif(light=="red"):
+    print("stop")  
+elif(light=="pink"):
+    print("working process")
+else:
+    print("go")  '''        
+    
+''' num=5
+
+if(num>2):
+    print("greater than 2")
+if(num>4):    
+    print("greater than 2") '''
+    
+num=5
+
+if(num>2):
+    print("greater than 2")
+elif(num>4):    
+    print("greater than 2")
+        
+        
