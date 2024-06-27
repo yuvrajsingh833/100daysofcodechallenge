@@ -1,0 +1,117 @@
+#100daysofcodechallenge
+
+#Day-1(Dictionary & Sets)
+
+#Dictionary
+
+''' dict={
+    "name":"Yuvraj",
+    "cgpa":8.5,
+    "subjects":["CN","OS","DBMS"],
+    "gpa_semester":(8.8,8,8.6,8.5),
+    "is_adult":True,           
+}
+#adding new key-value pair
+dict["surname"]="Singh Rathore"
+
+#updating(changing) new key-value pair
+
+dict["cgpa"]=8.57
+
+null_dict={}
+
+null_dict["name"]="Yuvraj Singh Rathore"
+print(null_dict)
+
+print(dict["name"])
+print(type(dict))
+print(dict)
+ '''
+ 
+#Nested Dictionary(By Creating value of old dictionary as new dictionary)
+
+''' dict={
+    "name":"Yuvraj",
+    "cgpa":8.5,
+    "subjects":{
+        "phy":94,
+        "math":96,
+        "chem":85
+    }
+    
+}
+
+print(dict["subjects"]) 
+print(dict["subjects"]["math"]) '''
+
+#Dictionary Methods
+
+''' dict={
+    "name":"Yuvraj",
+    "cgpa":8.5,
+    "subjects":{
+        "phy":94,
+        "math":96,
+        "chem":85
+    }
+    
+}
+
+print(dict.keys())
+print(list(dict.keys()))
+
+print(dict.values())
+print(list(dict.values()))
+print(len(list(dict.values())))
+
+print(dict.items())
+pairs=list(dict.items())
+print(pairs[2])
+
+print(dict.get("name")) #show NONE if no key is in dic but show ERROR in dict["name"] if no key is in dic
+
+new_dict={"Surname":"Singh Rathore"}
+print(dict.update(new_dict))
+print(dict)
+ '''
+ 
+
+#Practice Questions
+
+#1. Store following word meanings in a python dictionary :
+# table : “a piece of furniture”,“list of facts & figures”
+#cat : “a small animal”
+
+''' dict={}
+
+dict["table"]="a piece of furniture,list of facts & figures"
+dict["cat"]="a small animal"
+print(dict)
+ '''
+ 
+ #or
+ 
+''' dict={
+    "cat":"a small animal",
+    "table":["a piece of furniture","list of facts & figures"]
+ }
+
+print(dict)
+
+ '''
+ 
+#2. WAP to enter marks of 3 subjects from the user and store them in a dictionary. Start with
+#an empty dictionary & add one by one. Use subject name as key & marks as value
+
+
+dict={}
+phy=int(input("Enter Physics marks: "));
+dict.update({"Physics":phy})
+chem=int(input("Enter Chem marks: "));
+dict.update({"Chemistry":chem})
+math=int(input("Enter Maths marks: "));
+dict.update({"maths":math})
+
+
+print(dict)
+
