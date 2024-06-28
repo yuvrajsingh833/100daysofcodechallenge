@@ -1,0 +1,132 @@
+#Day3(Function and Recursion)-28/06/2024
+
+
+#1st time
+
+''' a=5
+b=10
+sum=a+b
+print(sum)
+
+#2nd time
+
+a=55
+b=140
+sum=a+b
+print(sum)
+
+#1st time
+
+a=85
+b=789
+sum=a+b
+print(sum) '''
+
+#instaed of repeating code, we can make sum function
+
+#1st method
+
+''' def cal_sum(a,b):
+    sum=a+b
+    return sum
+
+print(cal_sum(5,10)) '''
+
+#2nd method
+
+''' def cal_sum(a,b):
+    return a+b
+
+output=cal_sum(8,16)
+print(output) '''
+
+#3rd method
+
+''' def cal_sum(a,b):
+    sum=a+b
+    print(sum)
+    return sum
+
+cal_sum(8,16)
+cal_sum(14,82)
+cal_sum(48,96) '''
+
+
+#averge of 3 number
+''' 
+def cal_avg(a,b,c):
+    return (a+b+c)/3
+
+
+print(cal_avg(2,3,4))
+ '''
+ 
+ 
+
+# User defined function and default parameters
+
+''' def cal_prod(a,b=7):
+    print(a*b)
+    return a*b
+
+cal_prod(3)  '''
+
+
+# Function Practice Questions
+
+#1. WAF to print the length of a list. ( list is the parameter)
+''' cities=["Jaipur","Mumbai","Bangalore","Jodhpur"]
+nums=[5,8,9,5,10]
+
+def print_len(list):
+    print(len(list))
+    
+print_len(cities)
+print_len(nums)    
+     '''
+     
+#2. WAF to print the elements of a list in a single line. ( list is the parameter)
+
+''' cities=["Jaipur","Mumbai","Bangalore","Jodhpur"]
+nums=[5,8,9,5,10,20]
+
+def print_ele(list):
+    for item in list:
+        print(item,end=" ")
+        
+print_ele(cities)
+print_ele(nums)   '''  
+
+
+#3. WAF to find the factorial of n. (n is the parameter)
+
+''' def cal_factorial(n):
+    fact=1
+    for i in range(1,n+1):
+        fact*=i
+    print(fact)
+        
+cal_factorial(5)
+cal_factorial(6)   '''  
+
+#4. WAF to convert USD to INR.
+
+''' def cal_usd_inr(usd):
+      inr=usd*84
+      print(usd,"USD = ",inr,"INR" )  
+      
+cal_usd_inr(5)       '''
+
+#5.Even or Odd number
+
+''' n=int(input("Enter the number: "))
+
+def even_odd(number):
+    if(number%2==0):
+        print("Even Number")
+    else:
+        print("Odd Number")    
+        
+even_odd(n)   '''      
+        
+        
