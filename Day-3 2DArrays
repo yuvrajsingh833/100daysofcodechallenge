@@ -1,0 +1,333 @@
+//Day-3(2D Arrays)-28/06/2024
+
+//Creation of 2D matrix and Linear search of key
+
+import java.util.*;
+
+/* public class TwoDArrays {
+    //linear search of key
+    
+    public static boolean matrixSearch(int matrix[][],int key){
+        for(int i=0;i<matrix.length;i++){
+            for(int j=0;j<matrix[0].length;j++){
+                if(matrix[i][j]==key){
+                    System.out.println("key is found at cell ("+ i+","+j+")");
+                    return true;
+                }
+            }
+        }
+        System.out.println("Key not found");
+        return false;
+    }
+    public static void main(String[] args) {
+        //creation of an array
+        int matrix[][]=new int[3][3];
+        //input 2 D array element
+        Scanner sc=new Scanner(System.in);
+        for(int i=0;i<matrix.length;i++){
+            for(int j=0;j<matrix[0].length;j++){
+                matrix[i][j]=sc.nextInt();
+            }
+        }
+
+        //output of 2D Array
+
+        for(int i=0;i<matrix.length;i++){
+            for(int j=0;j<matrix[0].length;j++){
+                System.out.print(matrix[i][j]+ " ");
+            }
+            System.out.println();
+        }
+        matrixSearch(matrix,9);
+    }
+
+}
+ */
+
+ //Spiral matrix
+
+   /* public class TwoDArrays {
+
+    public static void spiralMatrix(int matrix[][]){
+        int startRow=0;
+        int endRow=matrix.length-1;
+        int startCol=0;
+        int endCol=matrix[0].length-1;
+
+        while(startRow<=endRow && startCol<=endCol){
+
+            //top
+
+            for(int j=startRow;j<=endCol;j++){
+                System.out.print(matrix[startRow][j]+ " ");
+            }
+
+            //right
+
+            for(int i=startRow+1;i<=endRow;i++){
+                System.out.print(matrix[i][endCol]+ " ");
+
+            }
+
+            //bottom
+            for(int j=endCol-1;j>=startCol;j--){
+                if(startRow==endRow){
+                    break;
+                }
+                System.out.print(matrix[endRow][j]+ " ");
+
+            }
+
+            //left
+
+            for(int i=endRow-1;i>=startCol+1;i--){
+                if(startCol==endCol){
+                    break;
+                }
+                System.out.print(matrix[i][startCol]+ " ");
+
+            }
+
+            startRow++;
+            endRow--;
+            startCol++;
+            endCol--;
+        }
+    }
+ 
+    public static void main(String[] args) {
+        int matrix[][]={{1,2,3,4},
+                        {5,6,7,8},
+                        {9,10,11,12},
+                        {13,14,15,16}};
+                        spiralMatrix(matrix);
+    }
+ } */
+
+
+ 
+//Diagnol Sum
+
+//1st Method- T.C-O(n^2)
+
+/* public class TwoDArrays {
+
+    public static int diagnolSum(int matrix[][]){
+        int sum=0;
+
+        for(int i=0;i<matrix.length;i++){
+            for(int j=0;j<matrix[0].length;j++){
+                if(i==j){
+                    sum+=matrix[i][j];
+                } else if(i+j==matrix.length-1){
+                    sum+=matrix[i][j];
+                }
+            }
+        }
+        return sum;
+
+    }
+
+    public static void main(String[] args) {
+        int matrix[][]={{1,2,3},
+                        {4,5,6},
+                        {7,8,9}
+                        };
+        System.out.println("Diagnol sum is: "+ diagnolSum(matrix));
+}
+} */
+
+
+//2nd method- T.C-O(n)
+
+/* public class TwoDArrays {
+
+    public static int diagnolSum(int matrix[]){
+        int sum=0;
+
+        for(int i=0;i<matrix.length;i++){
+            //pd
+            sum+=matrix[i][i];
+
+            //sd
+            if(i!=matrix.length-1-i){
+                sum+=matrix[i][matrix.length-1-i];
+            }
+            
+
+        }
+        return sum;
+    }
+
+    public static void main(String[] args) {
+        int matrix[][]={{1,2,3,4},
+                        {5,6,7,8},
+                        {9,10,11,12},
+                        {13,14,15,16}};
+    }
+} */
+
+
+//Search in sorted array- T.C-O(m+n)
+
+/* public class TwoDArrays {
+
+    public static boolean stairCaseSearch(int matrix[][],int key){
+        int row=0,col=matrix[0].length-1;
+
+        while(row<matrix.length && col>=0){
+            if(matrix[row][col]==key){
+                System.out.println("Key is found at cell ("+row+","+col+")");
+                return true;
+            }else if(key<matrix[row][col]){
+                col--;
+            }else{
+                row++;
+            }
+        }
+        System.out.println("Key is not found");
+        return false;
+    }
+    public static void main(String[] args) {
+        int matrix[][]={{10,20,30,40},
+                        {15,25,35,45},
+                        {27,29,37,48},
+                        {32,33,39,50}};
+        int key=35;  
+        stairCaseSearch(matrix, key);              
+    }
+} */
+
+/* public class TwoDArrays {
+
+    public static boolean stairCaseSearch(int matrix[][],int key){
+        int row=matrix.length-1,col=0;
+
+        while(row>0 && col<matrix[0].length){
+            if(matrix[row][col]==key){
+                System.out.println("Key is found at cell ("+row+","+col+")");
+                return true;
+            }else if(key<matrix[row][col]){
+                row--;
+            }else{
+                col++;
+            }
+        }
+        System.out.println("Key is not found");
+        return false;
+        
+    }
+
+    public static void main(String[] args) {
+        int matrix[][]={{10,20,30,40},
+                        {15,25,35,45},
+                        {27,29,37,48},
+                        {32,33,39,50}};
+        int key=35;  
+       stairCaseSearch(matrix, key);              
+    }
+} */
+
+
+//Assignments 
+
+/* 1. Print the number of 7’s that are in the 2d array.
+Example :
+Input - int[][] array = { {4,7,8},{8,8,7} };
+Output - 2 */
+
+/* public class TwoDArrays {
+
+    public static int printNumbers(int array [][]){
+
+        int number=0;
+
+        for(int i=0;i<array.length;i++){
+            for(int j=0;j<array[0].length;j++){
+                if(array[i][j]==7){
+                    number++;
+                }
+            }
+        }
+        System.out.println("Number 7 is "+ number+" times in this array");
+        return number;
+    }
+
+    public static void main(String[] args) {
+        int [][] array={ {4,7,8},
+                        {8,8,7} };
+        printNumbers(array);               
+    }
+} */
+
+
+/* Question 2 : Print out the sum of the numbers in the second row of the “nums” array.
+Example :
+Input - int[][] nums = { {1,4,9},{11,4,3},{2,2,3} };
+Output - 18 */
+
+ /* public class TwoDArrays {
+
+    public static int sumSecondRow(int nums[][]){
+        
+        int sum=0;
+        
+            for(int j=0;j<nums[0].length;j++){
+                sum+=nums[1][j];
+            }
+
+        System.out.println("Sum  of Second Row Element is: " + sum);
+        return sum;
+
+    }
+    public static void main(String[] args) {
+        int[][] nums = { {1,4,9},
+                        {11,4,3},
+                        {2,2,3} };
+            sumSecondRow(nums);            
+    }
+}  */
+
+
+/* Question 3 : Write a program to Find Transpose of a Matrix.
+What is Transpose?
+Transpose of a matrix is the process of swapping the rows to columns. For a 2x3 matrix,
+Matrix
+a11 a12 a13
+a21 a22 a23
+Transposed Matrix
+a11 a21
+a12 a22
+a13 a23 */
+
+
+/* 
+public class TwoDArrays {
+    public static void transposeMatrix(int matrix[][]){
+        int tmatrix[][]=new int[matrix[0].length][matrix.length];
+        
+
+        for(int i=0;i<matrix.length;i++){
+            for(int j=0;j<matrix[0].length;j++){
+                tmatrix[j][i]=matrix[i][j];
+
+            }
+        }
+        for(int i=0;i<tmatrix.length;i++){
+            for(int j=0;j<tmatrix[0].length;j++){
+                System.out.print(tmatrix[i][j] + " ");
+            }
+            System.out.println();
+        }
+
+    }
+    public static void main(String[] args) {
+        int matrix[][]={{2,3,7},
+                        {5,6,7}};
+
+        transposeMatrix(matrix);
+
+        
+
+    }
+} */
