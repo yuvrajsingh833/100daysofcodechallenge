@@ -1,0 +1,54 @@
+#Recursion
+
+#Recursive Function
+
+#print n to 1 backwards
+
+''' def show(n):
+    if(n==0): #base case 
+        return
+    print(n)
+    show(n-1)
+    
+show(5)     '''
+
+
+#factorial calculation using recursion
+
+''' def fact(n):
+    if(n==0 or n==1):
+        return 1
+    else:
+        return fact(n-1)*n
+    
+    
+print(fact(4))   '''  
+
+
+#Practice Questions
+
+#1. Write a recursive function to calculate the sum of first n natural numbers.
+
+''' def natural_sum(n):
+    if (n==0):
+        return 0
+    
+    return natural_sum(n-1)+n
+   
+sum=natural_sum(55)
+print(sum)   '''  
+
+#2. Write a recursive function to print all elements in a list.
+#Hint : use list & index as parameters.
+
+nums=[1,2,3,4,5,6,7]
+
+def print_list(list,idx):
+    if(idx==len(list)):
+        return
+    
+    print(list[idx])
+    print_list(list,idx+1)
+    
+print_list(nums,0)
+    
