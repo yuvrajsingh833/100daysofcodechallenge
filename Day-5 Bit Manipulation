@@ -1,0 +1,81 @@
+//Day-5(Module-17 Bit Manipulation)-30/06/2024
+
+//Binary And & Operator
+
+/* public class BitManipulation {
+
+    public static void main(String[] args) {
+        System.out.println((5&6));
+    }
+} */
+
+
+//Binary OR | Operator
+
+/* 
+public class BitManipulation {
+
+    public static void main(String[] args) {
+        System.out.println("Binary OR Answer is: "+ (5|6));
+    }
+} */
+
+
+//Binary XOR ^ Operator
+
+/* public class BitManipulation {
+
+    public static void main(String[] args) {
+        System.out.println("Binary XOR Answer is: "+ (5^6));
+    }
+}
+ */
+
+ //Binary 1's Copmplement(~ Not Operator)
+
+/*  public class BitManipulation {
+
+    public static void main(String[] args) {
+        System.out.println("Binary 1's Copmplement Answer is: "+ (~5));
+    }
+}
+ */
+
+ //Binary Left Shift Operator (<<)
+
+ /* public class BitManipulation {
+
+    public static void main(String[] args) {
+        System.out.println("Binary Left Shift is: "+ (11<<3));
+    }
+} */
+
+ //Binary Right Shift Operator (>>)
+
+/*  public class BitManipulation {
+
+    public static void main(String[] args) {
+        System.out.println("Binary Left Shift is: "+ (6>>1));
+    }
+}
+ */
+
+ //Check if a number is odd or even
+
+ /* public class BitManipulation {
+    public static void Odd_Even(int n){
+        int bitMask=1;
+        if((n&bitMask)==0){
+            System.out.println("Even Number");
+        }else{
+            System.out.println("Odd number");
+        }
+    }
+  
+  public static void main(String[] args) {
+    Odd_Even(5);
+    Odd_Even(9);
+    Odd_Even(6);
+    
+  }  
+ } */
