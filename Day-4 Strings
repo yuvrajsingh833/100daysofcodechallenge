@@ -1,0 +1,368 @@
+//Day-4(Module-16 String)-29/06/2024
+
+
+import java.util.*;
+
+//Defining a String
+
+/* public class Strings {
+    public static void main(String[] args) {
+        char ch[]={'a','b','c'};//character array
+
+        //defining a string
+
+        String str="abcdef"; //1st Method
+        String str2=new String("xyz@#123jg");
+        System.out.println(str);
+        System.out.println(str2);
+
+        //Strings are IMMUTABLE
+
+    }
+}
+ */
+
+//Input and Output of a String
+
+
+/* public class Strings {
+
+    public static void main(String[] args) {
+        //input of an string
+        Scanner sc=new Scanner(System.in);
+        //String name=sc.next() //next() will only print 1st word of string
+        String name=sc.nextLine(); //nextLine() will print whole paragraph
+
+        //output of a string
+        System.out.println(name);
+
+        //length of a string
+        System.out.println(name.length());
+
+    }
+}
+ */
+
+// String Concatenation 
+
+/* public class Strings {
+
+    public static void main(String[] args) {
+        String firstName="Yuvraj";
+        String middleName="Singh";
+        String lastName="Rathore";
+        String fullName=firstName + " " + middleName + " " + lastName; //concatenation
+
+        System.out.println(fullName + " is this");
+    }
+}  */
+
+//String .charAt() Method
+
+/* public class Strings {
+
+    public static void printLetters(String fullName){
+            for(int i=0;i<fullName.length();i++){
+                System.out.print(fullName.charAt((i))+" ");
+            }
+            System.out.println();
+    }
+    public static void main(String[] args) {
+
+        String firstName="Yuvraj";
+        String middleName="Singh";
+        String lastName="Rathore";
+        String fullName=firstName + " " + middleName + " " + lastName; //concatenation
+
+        System.out.println(fullName.charAt(8));
+        printLetters(fullName);
+    }
+}  */
+
+//String is Palindrome or not
+
+/* 
+public class Strings {
+
+    public static boolean is_palindrome(String str){
+        int n=str.length();
+        for(int i=0;i<n/2;i++){
+            if(str.charAt(i)!=str.charAt(n-i-1)){
+                return false;
+            }
+        }
+        
+      return true;
+    }
+
+    public static void main(String[] args) {
+        String str="racecar";
+        System.out.println(is_palindrome(str));
+        
+    }
+    
+} */
+
+
+//Shortest Path
+
+/* public class Strings {
+    public static float shortestPath(String path){
+        int x=0,y=0;
+
+        for(int i=0;i<path.length();i++){
+            if(path.charAt(i)=='N'){
+                y++;
+            }else if(path.charAt(i)=='S'){
+                y--;
+            }else if(path.charAt(i)=='E'){
+                x++;
+            }else{
+                x--;
+            }
+        }
+        float X1=(float)Math.pow(x, 2);
+        float Y1=(float)Math.pow(y, 2);
+        
+        return (float)Math.sqrt(X1+Y1);
+    }
+    public static void main(String[] args) {
+        String path="WNEENESENNN";
+        System.out.println("The Shortest path is: "+shortestPath(path));
+}
+} */
+
+//String function- Compare(.equals())- gives boolean value
+
+/* public class Strings {
+
+    public static void main(String[] args) {
+        String s1="Yuvraj";
+        String s2="Yuvraj";
+        String s3= new String("Yuvraj");
+
+        if(s1==s2){
+            System.out.println("Strings are equal");
+        }else{
+            System.out.println("Strings are not equal");
+        }
+
+        if(s1==s3){
+            System.out.println("Strings are equal");
+        }else{
+            System.out.println("Strings are not equal");
+        }
+
+        if(s1.equals(s3)){ //to compare value only of s1 and s3
+            System.out.println("Strings are equal");
+        }else{
+            System.out.println("Strings are not equal");
+        }
+    }
+} */
+
+//String Functions-substring(.substring(si,ei))
+
+/* public class Strings {
+    public static String printSubString(String str,int si,int ei){
+        String subString="";
+
+        for(int i=si;i<ei;i++){
+            subString+=str.charAt(i);
+        }
+        return subString;
+
+    }
+    public static void main(String[] args) {
+        String str="HelloWorld";
+        System.out.println(str.substring(1,5));
+        System.out.println(printSubString(str, 1,5));
+    }
+} */
+
+// Print Largest String (.compareTo() and .compareToIgnoreCase())-T.C.-O(x*n)
+
+/* public class Strings {
+
+    public static void main(String[] args) {
+        String fruits[]={"apple","mango","banana"};
+        String largest=fruits[0];
+
+        for(int i=1;i<fruits.length;i++){
+            if(largest.compareTo(fruits[i])<0){
+                largest=fruits[i];         
+              }
+        }
+        System.out.println(largest);
+
+    }
+} */
+
+
+//StringBuilder
+//.toString() function is used to change any data class into string
+
+/* public class Strings {
+
+    public static void main(String[] args) {
+        //StringBuilder sb=new StringBuilder("Hellow World"); //Defining StringBuilder  
+        
+        StringBuilder sb= new StringBuilder("");
+
+        for(char ch='a';ch<='z';ch++){
+            sb.append(ch);
+        }
+        System.out.println(sb);
+    }
+} */
+
+//Convert 1st letter of the word into uppercase
+
+/* public class Strings {
+
+    public static String letterUpperCase(String str){
+        StringBuilder sb=new StringBuilder("");
+         char ch= Character.toUpperCase(str.charAt(0));
+         sb.append(ch);
+         
+
+         for(int i=1;i<str.length();i++){
+            if(str.charAt(i)==' ' && i<str.length()-1){
+                sb.append(str.charAt(i));
+                i++;
+                sb.append(Character.toUpperCase(str.charAt(i)));
+
+            }else{
+                sb.append(str.charAt(i));
+            }
+         }
+         return sb.toString();
+    }
+
+
+    public static void main(String[] args) {
+        String str="hii, i am yuvraj";
+        letterUpperCase(str);
+        System.out.println(letterUpperCase(str));
+    }
+} */
+
+
+/* public class Strings {
+    public static String letterUpperCase(String str){
+        StringBuilder sb=new StringBuilder("");
+        char ch=Character.toUpperCase(str.charAt(0));
+        sb.append(ch);
+
+        for(int i=1;i<str.length();i++){
+            if(str.charAt(i)==' '&&  i<str.length()-1){
+                sb.append(str.charAt(i));
+                i++;
+                sb.append(Character.toUpperCase(str.charAt(i)));  
+            }else{
+                sb.append(str.charAt(i));
+            }
+        }
+        return sb.toString();
+
+    }
+    public static void main(String[] args) {
+        String str="hi, i am yuvraj";
+        System.out.println(letterUpperCase(str));
+    }
+} */
+
+//String Compress
+
+/* public class Strings {
+    public static String stringCompress(String str){
+        String comString="";
+      
+        for(int i=0;i<str.length();i++){
+            Integer count=1;
+            while(i<str.length()-1 && str.charAt(i)==str.charAt(i+1)){
+                count++;
+                i++;
+            }
+            comString+=str.charAt(i);
+            if(count>1){
+                comString+=count.toString();
+            }
+            
+        }
+        return comString;
+    }
+
+    public static void main(String[] args) {
+        String str="aaaabbbccd";
+        System.out.println(stringCompress(str));
+    }
+} */
+
+
+//Assignment Questions
+
+// Question 1 : Count how many times lowercase vowels occurred in a String entered by the user.
+
+/* public class Strings {
+
+    public static String lowercaseVowels(String str){
+        Integer count=0;
+        for(int i=0;i<str.length();i++){
+            if(str.charAt(i)=='a'||str.charAt(i)=='e'||str.charAt(i)=='i'||str.charAt(i)=='o'||str.charAt(i)=='u'){
+                count++;
+            }
+        }
+        return count.toString();
+    }
+
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        String str=sc.nextLine();
+        System.out.println(lowercaseVowels(str));
+    }
+} */
+
+//Question 4 : Determine if 2 Strings are anagrams of each other.
+//What are anagrams?
+//If two strings contain the same characters but in a different order, they can be said to be
+//anagrams. Consider race and care. In this case, race's characters can be formed into a study,
+//or care's characters can be formed into race. Below is a java program to check if two strings
+//are anagrams or not.
+
+/* public class Strings {
+    public static void isAnagrams(String str1,String str2){
+        str1=str1.toLowerCase();
+        str2=str2.toLowerCase();
+
+        if(str1.length()==str2.length()){
+
+            char str1CharArray[]=str1.toCharArray();
+            char str2CharArray[]=str2.toCharArray();
+
+        
+            Arrays.sort(str1CharArray);
+            Arrays.sort(str2CharArray);
+
+            if(Arrays.equals(str1CharArray,str2CharArray)==true){
+                System.out.println(str1 + " and "+str2 +" is anagrams");
+            }else{
+                System.out.println(str1 + " and "+str2 +" is anagrams");
+            }
+        }else{
+            System.out.println(str1 + " and "+str2 +" is not anagrams");
+        }
+
+    }
+       
+    public static void main(String[] args) {
+        String str1="rhcoe";
+        String str2="care";
+        isAnagrams(str1, str2);
+        
+    }
+}
+
+ */
+
+ 
