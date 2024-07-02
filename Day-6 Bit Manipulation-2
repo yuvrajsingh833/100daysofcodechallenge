@@ -1,0 +1,75 @@
+//Day-6(Module-17 Bit Manipulation)-01/07/2024
+
+//Get ith bit
+
+/* public class BitManipulation {
+
+    public static int getIthBit(int n,int i){
+        int bitMask=1<<i;
+
+        if((n&bitMask)==0){
+            return 0;
+        }else{
+            return 1;
+        }
+    }
+
+    public static void main(String[] args) {
+        System.out.println(getIthBit(10, 3));
+    }
+} */
+
+
+//Set ith Bit
+
+/* public class BitManipulation {
+    public static int setIthBit(int n,int i){
+        int bitMask=1<<i;
+        return n|bitMask;
+    }
+    public static void main(String[] args) {
+        System.out.println(setIthBit(11, 3));
+        
+    }
+} */
+
+//Clear in Bit
+
+/* public class BitManipulation {
+    public static int clearIthBit(int n,int i){
+        int bitMask=~(1<<i);
+        return n&bitMask;
+    }
+
+    public static void main(String[] args) {
+        System.out.println(clearIthBit(10, 2));
+    }
+}
+ */
+
+ //update ith Bit
+ 
+/* public class BitManipulation {
+
+    public static int clearIthBit(int n,int i){
+        int bitMask=~(1<<i);
+        return n&bitMask;
+    }
+
+    public static int setIthBit(int n,int i){
+        int bitMask=1<<i;
+        return n|bitMask;
+    }
+
+    public static int updateIthBit(int n, int i, int newBit){
+       if(newBit==0){
+        return clearIthBit(n,i);
+       }else{
+        return setIthBit(n,i);
+       } 
+    }
+    public static void main(String[] args) {
+        System.out.println(updateIthBit(10,2,1));
+        
+    }
+} */
