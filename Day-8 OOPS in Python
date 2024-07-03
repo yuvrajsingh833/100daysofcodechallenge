@@ -1,3 +1,52 @@
+#Day-4(OOPS in Python)-29/06/2024
+
+#Class and Object
+
+#Creating Class
+
+''' class Student:
+    name="Yuvraj"
+    gender="male"
+
+#creating Object(Instance/Instance of class)
+
+s1=Student()
+print(s1.name)
+print(s1.gender) '''
+
+#Example no. 2
+
+''' class Car:
+    color="Red"
+    brand="Mercedes"
+    
+    
+s2=Car()
+print(s2.brand)
+print(s2.color)     '''
+    
+    
+
+#Constructor(__init__() function)
+
+
+''' class Student:
+    college="VIT Bhopal University" #as college name is same for all students
+    def __init__(self,name,marks):
+        self.name=name
+        self.marks=marks
+        print("adding new student in Database...")
+        
+s1=Student("Karan",45)
+print(s1.name,s1.marks) 
+
+s2=Student("Yuvraj",95)
+print(s2.name,s2.marks) 
+
+print(s2.college)
+#or
+print(Student.college)      '''    
+
 #Day-8(OOPS in Python)-03/07/2024
 
 #Methods
