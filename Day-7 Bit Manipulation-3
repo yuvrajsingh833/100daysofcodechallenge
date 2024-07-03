@@ -1,0 +1,15 @@
+//Day-7 (Module-17 Bit Manipulation)-02/07/2024
+
+//Clear i bits
+/* 
+public class BitManipulation {
+
+    public static int clearIBit(int n,int i){
+        int bitMask= ~(0)<<i;
+        return n & bitMask;
+    }
+
+    public static void main(String[] args) {
+     System.out.println(clearIBit(9,2)); 
+    }
+} */
