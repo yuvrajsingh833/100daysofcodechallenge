@@ -1,0 +1,431 @@
+#Object Oriented Programming System(OOPS)
+
+#1. Abstraction
+
+''' class Car:
+    
+    def __init__(self):
+        self.acc=False
+        self.brk=False
+        self.clutch=False
+        
+    def Start(self):
+        self.acc=True
+        self.clutch=True
+        
+        print("Started...")
+        
+car1=Car()
+car1.Start()     '''  
+
+#2. Encapsulation
+
+# Above all examples are the example of encapsulation in which we are wrapping all the attributes and function in a sngle class
+# example
+
+''' class Student:
+    
+    def __init__(self,name,marks):
+        self.name=name
+        self.marks=marks
+        
+    def get_avg(self):
+        sum=0
+        for val in self.marks:
+            sum+=val
+            
+        print("Hi," ,self.name, "Your average marks is ",sum/3)
+        
+s1=Student("Yuvraj",[98,84,86])
+s1.get_avg() 
+
+s1.name="Rahul" # we can change object attribute in this way 
+s1.get_avg()      '''          
+
+#Practice Questions
+
+#1. Create Account class with 2 attributes - balance & account no.
+#Create methods for debit, credit & printing the balance.
+
+''' class Account:
+    
+    def __init__(self,bal,acc):
+        self.balance=bal
+        self.account_no=acc
+        
+    def Debit(self,amount):
+        self.balance-=amount
+        print("Rs.",amount, "is debited")
+        print("Total Available amount is:",self.get_Balance())        
+        
+    def Credit(self,amount):
+        self.balance+=amount
+        print("Rs",amount,"is credited") 
+        print("Total Available amount is:",self.get_Balance())        
+        
+        
+    def get_Balance(self):
+        return self.balance 
+    
+    
+acc1=Account(150000,987456)
+acc1.Debit(5000)
+acc1.Credit(10000)   '''    
+            
+        
+            
+        
+        #Day-9(OOPS in Python)-04/07/2024
+
+#del keyword- It is used to delete the attributed of an object or object itself
+
+''' class Student:
+    def __init__(self,name):
+        self.name=name
+        
+s1=Student("Yuvraj") 
+print(s1.name)
+
+del s1.name    
+print(s1.name)
+    '''
+    
+#Private attributes and methods
+
+''' class Account:
+    def __init__(self,accNo,Pass):
+        self.accNo=accNo
+        self.__Pass=Pass
+        
+    def reset_password(self): #within class it is accessible
+        print(self.__Pass)
+        
+acc1=Account("123456","abcde") 
+print(acc1.accNo)  
+#print(acc1.__Pass) 
+acc1.reset_password()       '''
+
+''' class Person:
+    __name="Yuvraj Singh"
+    
+    def __hello(self):
+        print("Hello")
+        
+    def Welcome(self):
+        print(self.__hello())    #interaly we are using it
+        
+        
+p1=Person()
+#print(p1.__name) 
+p1.Welcome()     
+         '''
+         
+#Inheritance(when a one class(child/derived) derives a method/properties from another class(parent/base))
+
+''' class Car:
+    
+    color="black"
+    
+    @staticmethod
+    def Start():
+        print("Car Started")
+     
+    @staticmethod 
+    def Stop():
+        print("Car Stopped") 
+        
+class ToyotoCar(Car):
+    
+    def __init__(self,name):
+        self.name=name
+        
+car1=ToyotoCar("Fortuner")
+print(car1.name)  
+print(car1.Start()) 
+print(car1.Stop())
+print(car1.color)                
+ '''
+ 
+#Types of Inheritance
+
+#1. Single level Inheritace
+
+''' class Car:
+    
+    color="black"
+    
+    @staticmethod
+    def Start():
+        print("Car Started")
+     
+    @staticmethod 
+    def Stop():
+        print("Car Stopped") 
+        
+class ToyotoCar(Car):
+    
+    def __init__(self,name):
+        self.name=name
+        
+car1=ToyotoCar("Fortuner")
+print(car1.name)  
+print(car1.Start()) 
+print(car1.Stop())
+print(car1.color)  '''
+
+#2. Multi Level Inheritance
+
+''' class Car:
+    
+    @staticmethod
+    def start():
+        print("Car Started....")
+        
+    def Stop():
+        print("Car Stopped..") 
+        
+class ToyotoCar(Car):
+    
+    def __init__(self,brand):
+        self.brand=brand         
+    
+class Fortuner(ToyotoCar):
+    
+    def __init__(self,type):
+        self.type=type
+        
+car1=Fortuner("Diesal")
+print(car1.type)
+car1.start()   '''   
+
+
+#3. Multiple level inheritance-- one parent class, many child class
+''' 
+class A:
+    varA="welcome to class A"   
+    
+class B:
+    varB="Welcome to class B" 
+    
+class C:
+    varC="Welcome to class C"
+    
+class D(A,B,C):
+    varD="Welcome to class D"
+    
+cls=D
+print(cls.varB) 
+print(cls.varA)  
+print(cls.varC)         '''    
+
+#Super Class- It is used to access method of parent class
+
+''' 
+class Car:
+    
+    def __init__(self,type):
+        self.type=type
+    
+    @staticmethod
+    def start():
+        print("Car Started....")
+        
+    def Stop():
+        print("Car Stopped..") 
+        
+class ToyotoCar(Car):
+    
+    def __init__(self,brand,type):
+        super().__init__(type)  
+        self.brand=brand
+        super().start()  
+            
+
+        
+car1=ToyotoCar("Fortuner","diesal")
+print(car1.brand)
+print(car1.type)
+ '''
+
+#class method
+#updating name of class attribute name="anamously"
+''' class Person:
+    
+    name="anamously"
+    
+    #def __init__(self,name):
+        #Person.name=name -1st trick
+        #self.__class__.name=name - 2nd trick
+        
+    @classmethod
+    def changeName(cls,name):
+        cls.name=name
+            
+        
+        
+ 
+p1=Person() 
+p1.changeName("Yuvraj Singh")
+print(p1.name)
+print(Person.name) '''
+
+
+#Property
+
+''' class Student:
+    
+    def __init__(self,phy,chem,math):
+        self.phy=phy
+        self.chem=chem
+        self.math=math
+        #self.percentage=str((phy+chem+math)/3) +" %"
+        
+
+    @property
+    def percentage(self):
+        return str((self.phy+self.chem+self.math)/3) +" %"   
+        
+s1=Student(82,96,72)
+print(s1.percentage)
+ '''
+
+''' s1.phy=96
+print(s1.phy)        
+print(s1.percentage) ''' #after updating marks percentage is samem, so we will change this approach
+''' 
+s1.phy=96
+print(s1.percentage)
+ '''
+ 
+
+#Polymorphism
+ 
+# arithmetic operator(+,-,*,/) have different meaning in all classes
+
+''' print(1+2) #addition
+print(type(1+2)) 
+print(type("Yuvraj"+" Singh")) 
+print("Yuvraj"+"Singh") #concatenation
+print(type([1,2,3,4] + [5,6,7,8])) 
+print([1,2,3,4] + [5,6,7,8])#Merge '''
+
+#note:- + operator have different meaning in each class case
+
+#Dunder function
+
+# ''' class Complex: '''
+    
+#     # def __init__(self,real,img):
+#     #     self.real=real
+#     #     self.img=img
+        
+#     ''' def showNumber(self):
+#         print(self.real,"i +",self.img,"j") ''' 
+        
+#     ''' def add(self,num2):
+#         newReal=self.real + num2.real
+#         newImg=self.img + num2.img   
+#         return Complex(newReal,newImg)  '''   
+#     ''' 
+#     def sub(self,num2):
+#         newReal=self.real - num2.real
+#         newImg=self.img - num2.img   
+#         return Complex(newReal,newImg)    
+#      '''
+    
+# num1=Complex(4,5)
+# num1.showNumber() 
+
+# num2=Complex(5,6)
+# num2.showNumber()
+
+# ''' num3=num1.add(num2)
+# num3.showNumber() 
+
+# num3=num1.sub(num2)
+# num3.showNumber()     '''
+# ''' 
+# num3=num1+num2
+# num3.showNumber()
+#     '''
+
+
+
+#Practice Questions
+
+#1. Define a Circle class to create a circle with radius r using the constructor.
+#Define an Area() method of the class which calculates the area of the circle.
+#Define a Perimeter() method of the class which allows you to calculate the perimeter of the
+#circle.
+''' 
+class Circle:
+    
+    def __init__(self,radius):
+        self.radius=radius
+    
+    def Area(self):
+        return 3.14*self.radius**2
+    
+    def Perimeter(self):
+        return 2*3.14*self.radius
+
+c=Circle(7)
+print(c.radius)
+print(c.Area())
+print(c.Perimeter()) '''
+
+
+
+#2. Qs. Define a Employee class with attributes role, department & salary. This class also showDetails( ) method.
+#Create an Engineer class that inherits properties from Employee & has additional
+#attributes : name & age.
+''' 
+class Emplyoee:
+    
+    def __init__(self,role,department,salary):
+        self.role=role
+        self.department=department
+        self.salary=salary
+        
+    def showDetails(self):
+          print("Role is: ",self.role)  
+          print("Department is : ",self.department) 
+          print("Salary is: ",self.salary)
+          
+class Engineer(Emplyoee):
+    
+    def __init__(self,name,age,role,department,salary):
+      
+        super().__init__(role,department,salary) 
+        self.name=name
+        self.age=age
+
+ 
+em=Engineer("Yuvraj",22,"Accountant","Finance",200000)
+print(em.name)
+print(em.age)   
+print(em.role)     
+print(em.department)
+print(em.salary)
+
+em.showDetails()
+               '''
+    
+    
+    
+#3. Qs. Create a class called Order which stores item & its price. Use Dunder function_gt _( ) to convey that:
+#order1 > order2 if price of order1 > price of order2
+
+''' class Order:
+    
+    def __init__(self,item,price):    
+            self.item=item
+            self.price=price
+            
+    def __gt__(self,ord2):
+        return self.price > ord2.price        
+            
+ord1=Order("Chips",200)
+ord2=Order("Biscuit",180)  
+
+print(ord1>ord2)    '''       
