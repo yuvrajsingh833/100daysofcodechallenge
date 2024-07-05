@@ -1,0 +1,501 @@
+//Day-10(OOPS in java- Module 18)
+
+//Classes and Objectsr
+
+/* public class OOPS {
+
+    public static void main(String[] args) {
+        //creating object of a class called Pen
+        Pen p1=new Pen();
+        p1.color="Blue";
+        System.out.println(p1.color);
+        p1.setColor("Yellow");
+        System.out.println(p1.color);
+        p1.setTip(5);
+        System.out.println(p1.tip);
+        System.out.println(p1.color);
+
+        //creating object of class called Animal
+
+        Animal a1=new Animal();
+        a1.color="Red";
+        System.out.println(a1.color);
+        a1.legs=4;
+        System.out.println(a1.legs);
+        a1.setColor("Yellow");
+        System.out.println(a1.color);
+        a1.setLegs(2);
+        System.out.println(a1.legs);
+
+
+
+
+    }
+    
+}
+
+class Pen{
+
+    //defining properties
+    String color;
+    int tip;
+
+    //defining functions
+    void setColor(String newColor){
+        color=newColor;
+    }
+
+    void setTip(int newTip){
+        tip=newTip;
+    }
+}
+
+class Animal{
+    String color;
+    int legs;
+
+    void setColor(String newColor){
+        color=newColor;
+    }
+
+    void setLegs(int newLegs){
+        legs=newLegs;
+    }
+} */
+
+//Access Modifiers/Access Specifiers(private,default,protected,public)
+
+/* public class OOPS {
+    public static void main(String[] args) {
+        BankAccount myAcc = new BankAccount();
+        myAcc.username = "Yuvraj833";
+        //myAcc.password="yuvraj"; -- can not acces it as it is a private 
+        myAcc.setPassword("yuvraj");
+        
+        // Printing the values
+        System.out.println("Username: " + myAcc.username);
+        // Note: Direct access to password is not possible as it is private.
+    }
+}
+
+class BankAccount {
+    public String username;
+    private String password;
+
+
+    public void setPassword(String newPassword) {
+        password = newPassword;
+        System.out.println("Password: "+password);
+    }
+    
+}
+ */
+
+
+//getters() and setters()
+
+
+/* public class OOPS {
+    public static void main(String[] args) {
+        Pen p1 = new Pen();
+        p1.setColor("Red");
+        System.out.println("Color: " + p1.getColor()); // Added semicolon and corrected method name
+        p1.setTip(6);
+        System.out.println("Tip size: " + p1.getTip()); // Corrected method name
+    }
+}
+
+class Pen {
+    private String color;
+    private int tip;
+
+    // getters
+    String getColor() {
+        return this.color;
+    }
+
+    int getTip() {
+        return this.tip;
+    }
+
+    // setters
+    void setColor(String color) {
+        this.color = color;
+    }
+
+    void setTip(int tip) {
+        this.tip = tip;
+    }
+}
+ */
+
+ //Constructor
+
+
+/* public class OOPS {
+
+    public static void main(String[] args) {
+        Student s1=new Student("Yuvraj",12345);
+        System.out.println(s1.name);
+        System.out.println(s1.rollNo);
+        
+    }
+    
+}
+
+class Student{
+    String name;
+    int rollNo;
+
+    Student(String name,int rollNo){
+        //System.out.println();
+        this.name=name;
+        this.rollNo=rollNo;
+    }
+} */
+
+//Types of Constructor(Default/Parameterzied Constructor, Non-Parameterized Constructor, Copy Constructor)
+
+/* public class OOPS {
+
+    public static void main(String[] args) {
+        
+        Student s1=new Student();
+
+        Student s2=new Student("Yuvraj");
+        System.out.println(s2.name);
+
+        Student s3=new Student(11170);
+        System.out.println(s3.rollNo);
+
+        Student s4=new Student("Mausam",1195);
+        System.out.println(s4.name);
+        System.out.println(s4.rollNo);
+    }
+    
+}
+
+class Student{
+    String name;
+    int rollNo;
+
+
+    //Non-Parmeterized/Default Constructror
+
+    Student(){
+        System.out.println("Non-Parmeterized/Default Constructror");
+    }
+
+    //Parmeterized Constructor
+
+
+    Student(String name){
+        this.name=name;
+    }
+
+    Student(int rollNo){
+        this.rollNo=rollNo;
+    }
+
+    
+    Student(String name,int rollNo){
+        this.name=name;
+        this.rollNo=rollNo;
+    }
+} */
+
+
+//Copy Constructor
+
+/* public class OOPS {
+
+    public static void main(String[] args) {
+        Student s1 = new Student();
+        s1.password="abcde";
+        s1.name="Yuvraj Singh";
+        s1.rollNo=12345;
+        s1.marks[0]=100;
+        s1.marks[1]=90;
+        s1.marks[2]=80;
+
+        System.out.println(s1.name);
+        System.out.println(s1.rollNo);
+        System.out.println(s1.password);
+
+        for(int i=0;i<3;i++){
+            System.out.println(s1.marks[i]);
+        }
+        System.out.println();
+
+
+        Student s2 = new Student(s1); //shallow constructor is called
+        s2.password="qwerty";
+
+        System.out.println(s1.name);
+        System.out.println(s2.rollNo);
+        System.out.println(s2.password);
+        s1.marks[2]=95; //here s2 is already called and copied but still marks 2 valus is going to be changed and this is the problem
+
+        for(int i=0;i<3;i++){
+            System.out.println(s2.marks[i]);
+        }
+    }
+}
+
+
+class Student {
+
+    String name;
+    int rollNo;
+    String password; 
+    int marks[];
+
+    Student() {
+        marks=new int[3];
+        System.out.println("constructor is called....");
+    }
+
+
+    //copy constructor
+
+    Student(Student s1) {
+        this.marks=s1.marks;
+        this.name = s1.name;
+        this.rollNo = s1.rollNo;
+        marks=new int[3];
+       }
+}
+ */
+
+
+//Copy Constructor
+
+/* public class OOPS {
+
+    public static void main(String[] args) {
+        Student s1 = new Student();
+        s1.password="abcde";
+        s1.name="Yuvraj Singh";
+        s1.rollNo=12345;
+        s1.marks[0]=100;
+        s1.marks[1]=90;
+        s1.marks[2]=80;
+
+        System.out.println(s1.name);
+        System.out.println(s1.rollNo);
+        System.out.println(s1.password);
+
+        for(int i=0;i<3;i++){
+            System.out.println(s1.marks[i]);
+        }
+        System.out.println();
+
+
+        Student s2 = new Student(s1); //shallow constructor is called
+        s2.password="qwerty";
+
+        System.out.println(s1.name);
+        System.out.println(s2.rollNo);
+        System.out.println(s2.password);
+        s1.marks[2]=95; //here s2 is already called and copied but still marks 2 valus is going to be changed and this is the problem
+
+        for(int i=0;i<3;i++){
+            System.out.println(s2.marks[i]);
+        }
+    }
+}
+    class Student {
+
+        String name;
+        int rollNo;
+        String password; 
+        int marks[];
+    
+        Student() {
+            marks=new int[3];
+            System.out.println("constructor is called....");
+        }
+    
+    
+        //copy constructor(in this changes in array is not reflect)
+    
+        Student(Student s1) {
+            marks=new int[3];
+            this.name = s1.name;
+            this.rollNo = s1.rollNo;
+
+            for(int i=0;i<marks.length;i++){
+                this.marks[i]=s1.marks[i];
+            }
+           }
+    }
+ */
+
+
+//Inheritance
+
+//Single level Inheritance
+
+/* public class OOPS {
+
+    public static void main(String[] args) {
+
+    Fish f1=new Fish();
+    f1.color="Red";
+    System.out.println(f1.color);
+    f1.fins=4;
+    System.out.println(f1.fins);
+    f1.Swim();
+    f1.breath();
+    f1.eat();
+
+        
+    }
+}
+
+//base class
+
+class Animal{
+
+    String color;
+
+    void eat(){
+        System.out.println("Eats");
+    }
+
+    void breath(){
+        System.out.println("Breath");
+    }
+}
+
+//derived class
+
+class Fish extends Animal{
+
+    int fins;
+
+    void Swim(){
+        System.out.println("Swim");
+    }
+}  */
+
+//Multi Level Inheritance
+
+/* public class OOPS {
+
+    public static void main(String[] args) {
+
+        Dog dobby=new Dog();
+        dobby.color="Yellow";
+        dobby.leg=4;
+        dobby.breed="German Shepard";
+        dobby.Bark();
+        dobby.Breath();
+        dobby.Eat();
+        dobby.Speak();
+        System.out.println(dobby.color);
+        System.out.println(dobby.leg);
+        System.out.println(dobby.breed);
+        
+    }
+}
+
+class Animal{
+    String color;
+
+    void Eat(){
+        System.out.println("can eat");
+    }
+
+    void Breath(){
+        System.out.println("can breath");
+    }
+
+}
+
+class Mammel extends Animal{
+
+    int leg;
+
+    void Speak(){
+        System.out.println("Can Speak");
+    }
+}
+
+class Dog extends Mammel{
+
+    String breed;
+
+    void Bark(){
+        System.out.println("Can bark");
+    }
+} */
+
+//Hierarchial Inheritance(One base class, many derived class)
+
+/* public class OOPS {
+
+    public static void main(String[] args) {
+        Fish f=new Fish();
+        f.Swim();
+        f.Eat();
+        f.color="Red";
+        System.out.println(f.color);
+
+        Bird b=new Bird();
+        b.Fly();
+        b.Eat();
+        b.color="Yellow";
+        System.out.println(b.color);
+
+        Mammel m=new Mammel();
+        m.Walk();
+        b.Eat();
+        //m.Fly();-- Not possible
+        m.color="Blue";
+        System.out.println(m.color);
+
+        
+    }
+}
+
+class Animal{
+    String color;
+
+    void Eat(){
+        System.out.println("can eat");
+    }
+
+    void Breath(){
+        System.out.println("can breath");
+    }
+
+}
+
+class Fish extends Animal{
+
+    void Swim(){
+        System.out.println("Can Swim");
+    }
+}
+
+class Bird extends Animal{
+
+    void Fly(){
+        System.out.println("Can Fly");
+    }
+}
+
+class Mammel extends Animal{
+
+    void Walk(){
+        System.out.println("Can Walk");
+    }
+}
+
+
+ */
+
+ //Hybrid Inheritance
+
+ //(Many Base class and many derived class)- It makes an hybrid type structure
