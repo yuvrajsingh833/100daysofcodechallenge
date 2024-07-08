@@ -1,0 +1,56 @@
+//Day-12(Module-19 Recursion)-08/07/2024
+
+//Printing Number n to 1;
+
+// class Recursion {
+    
+//     public static void printDec(int n){
+//         if(n==1){
+//              System.out.print(n);
+//              return;
+//         }
+//         System.out.print(n+" ");
+//         printDec(n-1);
+//     }
+//     public static void main(String[] args) {
+//        printDec(10);
+//     }
+// }
+
+
+//Printing Number 1 to n(Increasing Order)
+
+// public class Recursion{
+
+//     public static void printInc(int n){
+//         if(n==1){//Base Case
+//             System.out.print(n);
+//         }
+//         printInc(n-1);
+//         System.out.print(n);
+//     }
+//     public static void main(String[] args){
+//         printInc(10)
+//     }
+// }
+
+
+//Print factorial of n number
+
+// public class Recursion{
+
+//     public static int factorial(int n){
+
+//         if(n==0){
+//             return 1;
+//         }
+//         int fac=n*factorial(n-1);
+
+//         return fac;
+//     }
+//     public static void main(String[] args){
+//         System.out.println(factorial(5));
+//     }
+// }
+
+
