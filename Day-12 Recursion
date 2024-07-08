@@ -90,4 +90,98 @@
 //     }
 // }
 
+//print Nth fabonacci number
 
+// public class Recursion{
+
+//     public static int fab(int n){
+//         if(n==0 || n==1){
+//             return n;
+//         };
+
+//         int fabnm1=fab(n-1); 
+//         int fabnm2=fab(n-2);
+//         int fabSum=fabnm1+fabnm2;
+//         return fabSum;
+
+//     }
+//     public static void main(String[] args){
+
+//         System.out.println(fab(5));
+//     }
+// }
+
+//check if array is sorted or not
+
+// public class Recursion{
+
+//     public static boolean isSorted(int arr[],int i){
+//         if(i==arr.length-1){//base case
+//             return true;
+//         }
+//         if(arr[i]>arr[i+1]){
+//             return false;
+//         }
+
+//         return isSorted(arr,i+1);
+
+//     }
+
+//     public static void main(String [] args){
+//         int arr[]={1,2,3,4,5};
+//         int i=0;
+//         System.out.println(isSorted(arr,i));
+
+//     }
+// }
+
+
+//WAF to find first occurance of an element in an array
+
+// public class Recursion{
+
+//     public static int fisrtOccurance(int arr[],int key,int i){
+//         if(i==arr.length){ //base case
+//             return -1;
+//         }
+
+//         if(arr[i]==key){
+//             return i;
+//         }
+
+//         return fisrtOccurance(arr,key,i+1);
+
+//     }
+//     public static void main(String[] args){
+//         int arr[]={8,3,6,9,5,10,2,5,3};
+//         int key=5;
+//         int i=0;
+//         System.out.println(fisrtOccurance(arr,key,i));
+//     }
+// }
+
+
+//WAF to find last occurance of an element in an array
+
+// public class Recursion{
+
+//     public static int lastOccurance(int arr[],int key,int i){
+//         if(i==arr.length){ //base case
+//             return -1;
+//         }
+
+//         int isFound=lastOccurance(arr,key,i+1);
+//         if(isFound==-1 && arr[i]==key){
+//             return i;
+//         }
+
+//         return isFound;
+
+//     }
+//     public static void main(String[] args){
+//         int arr[]={8,3,6,9,5,10,2,5,3};
+//         int key=5;
+//         int i=0;
+//         System.out.println(lastOccurance(arr,key,i));
+//     }
+// }
