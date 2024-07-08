@@ -1,4 +1,4 @@
-//Day-12(Module-19 Recursion)-08/07/2024
+//Day-13(Module-19 Recursion)-08/07/2024
 
 //Printing Number n to 1;
 
@@ -35,7 +35,7 @@
 // }
 
 
-//Print factorial of n number
+//Print factorial of n number- T.C-O(n), S.C-O(n)
 
 // public class Recursion{
 
@@ -50,6 +50,43 @@
 //     }
 //     public static void main(String[] args){
 //         System.out.println(factorial(5));
+//     }
+// }
+
+
+//Sum of N natural number 
+
+
+//1st Method
+
+// public class Recursion{
+//     public static int nSum(int n){
+//         if(n==1){
+//             return 1;
+//         }
+//         int sum=n+nSum(n-1);
+//         return sum;
+
+//     }
+//     public static void main(String [] args){
+//         System.out.println(nSum(10));
+//     }
+// }
+
+//2nd Method
+
+// public class Recursion{
+//     public static int nSum(int n){
+//         if(n==1){
+//             return 1;
+//         }
+//         int sumnm1=nSum(n-1);
+//         int sum=n+sumnm1;
+//         return sum;
+
+//     }
+//     public static void main(String [] args){
+//         System.out.println(nSum(10));
 //     }
 // }
 
