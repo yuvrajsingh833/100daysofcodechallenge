@@ -80,29 +80,81 @@
 
 //Remove Deuplicate Character
 
-public class Recursion {
+// public class Recursion {
 
-    public static void removeDuplicates(String str, int idx, StringBuilder newStr, boolean[] map) {
-        // Base case: when idx reaches the length of the string
-        if (idx == str.length()) {
-            System.out.println(newStr);
-            return;
+//     public static void removeDuplicates(String str, int idx, StringBuilder newStr, boolean[] map) {
+//         // Base case: when idx reaches the length of the string
+//         if (idx == str.length()) {
+//             System.out.println(newStr);
+//             return;
+//         }
+
+//         char currChar = str.charAt(idx);
+
+//         if (map[currChar - 'a']==true) {
+//             // Character already seen, skip it
+//             removeDuplicates(str, idx + 1, newStr, map);
+//         } else {
+//             // Mark the character as seen and include it in newStr
+//             map[currChar - 'a'] = true;
+//             removeDuplicates(str, idx + 1, newStr.append(currChar), map);
+//         }
+//     }
+
+//     public static void main(String[] args) {
+//         String str = "appnnacollege";
+//         removeDuplicates(str, 0, new StringBuilder(), new boolean[26]); // Use size 26 for 'a' to 'z'
+//     }
+// }
+
+//By Own
+
+// public class Recursion{
+//     public static void removeDupliacate(String str,int idx, StringBuilder newStr,boolean []map){
+//         if(idx==str.length()){
+//             System.out.println(newStr);
+//             return;
+//         }
+
+//         char currChar=str.charAt(idx);
+
+//         if(map[currChar-'a']==true){
+//             //duplicate skip
+//             removeDupliacate(str,idx+1,newStr,map);
+//         }else{
+//             map[currChar-'a']=true;
+//             removeDupliacate(str,idx+1,newStr.append(currChar),map);
+//         }
+//     }
+//     public static void main(String [] args){
+//         String str="appnnacollege";
+//         removeDupliacate(str,0,new StringBuilder(),new boolean[26]);
+
+//     }
+// }
+
+//Friends Pairing Problem
+
+public class Recursion{
+
+    public static int friendsPairing(int n){
+
+        if(n==1||n==2){
+            return n;
         }
+        //choice
+        //single choice
+        int fnm1=friendsPairing(n-1);
+        //pair choice
+        int fnm2=friendsPairing(n-2);
+        int pairWays=(n-1)*fnm2;
 
-        char currChar = str.charAt(idx);
+        int totalWays=fnm1+pairWays;
 
-        if (map[currChar - 'a']==true) {
-            // Character already seen, skip it
-            removeDuplicates(str, idx + 1, newStr, map);
-        } else {
-            // Mark the character as seen and include it in newStr
-            map[currChar - 'a'] = true;
-            removeDuplicates(str, idx + 1, newStr.append(currChar), map);
-        }
+        return pairWays;
+
     }
-
-    public static void main(String[] args) {
-        String str = "appnnacollege";
-        removeDuplicates(str, 0, new StringBuilder(), new boolean[26]); // Use size 26 for 'a' to 'z'
+    public static void main(String args[]){
+        System.out.println(friendsPairing(5));
     }
 }
