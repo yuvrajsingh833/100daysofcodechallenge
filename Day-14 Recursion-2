@@ -1,0 +1,108 @@
+//Day-14(Module-19 Recursion)--09/07/2024
+
+//print x to power n;
+
+//Method 1- T.C-O(n),S.C-O(n)
+
+// public class Recursiuon{
+
+//     publi static int power(int x,int n){
+//         if(n==0){
+//             return 1;
+//         }
+//         int xnm=x*power(x,n-1);
+//         return xnm;
+
+//     }
+//     public static void main(String[] args){
+//         System.out.println(power(2,10));
+
+//     }
+// }
+
+//Method-2 (Optimized power)- T.C.-O(log n);
+
+// public class Recursion{
+
+//     public static int optimizedPower(int x,int n){
+
+//         if(n==0){
+//             return 1;
+//         }
+//         //if n is even
+
+//         //int halfpowersq=optimizedPower(x,n/2)*optimizedPower(x,n/2);// calling two times same function wgich increase TC
+//         int halfpower=optimizedPower(x,n/2);
+//         int halfpowersq=halfpower*halfpower;
+//         //if n is odd
+
+//         if(n%2!=0){
+//             halfpowersq=x*halfpowersq;
+//         }
+
+//         return halfpowersq;
+//     }
+//     public static void main(String [] args){
+//         System.out.println(optimizedPower(2,10));
+//     }
+// }
+
+
+//Tiling Problem
+
+// public class Recursion{
+
+//     public static int tilingProblem(int n){
+
+//         if(n==0 || n==1){
+//             return 1;
+//         }
+
+//         //if tiles in vertical form
+
+//         int fnm1=tilingProblem(n-1);
+
+//         //if tiles is in horizenatl form
+
+//         int fnm2=tilingProblem(n-2);
+
+//         //total ways
+
+//         int totalWays=fnm1+fnm2;
+
+//         return totalWays;
+//     }
+//     public static void main(String[] args){
+//         System.out.println(tilingProblem(3));
+//     }
+// }
+
+
+//Remove Deuplicate Character
+
+public class Recursion {
+
+    public static void removeDuplicates(String str, int idx, StringBuilder newStr, boolean[] map) {
+        // Base case: when idx reaches the length of the string
+        if (idx == str.length()) {
+            System.out.println(newStr);
+            return;
+        }
+
+        char currChar = str.charAt(idx);
+
+        if (map[currChar - 'a']==true) {
+            // Character already seen, skip it
+            removeDuplicates(str, idx + 1, newStr, map);
+        } else {
+            // Mark the character as seen and include it in newStr
+            map[currChar - 'a'] = true;
+            removeDuplicates(str, idx + 1, newStr.append(currChar), map);
+        }
+    }
+
+    public static void main(String[] args) {
+        String str = "appnnacollege";
+        removeDuplicates(str, 0, new StringBuilder(), new boolean[26]); // Use size 26 for 'a' to 'z'
+    }
+}
