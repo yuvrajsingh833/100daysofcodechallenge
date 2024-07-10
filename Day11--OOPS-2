@@ -1,1 +1,132 @@
-Have to upload here
+//Day-11(OOPS-Module 18)-06/07/2024
+
+//Polymorphism
+
+//Method Overloading(Complile Type Polymorphism)
+
+/* public class OOPS {
+
+    public static void main(String[] args) {
+
+        Calculator calc=new Calculator();
+        System.out.println(calc.Sum(5, 4));
+        System.out.println(calc.Sum((float)10.5,(float)9.8));
+        System.out.println(calc.Sum(9,5,16));
+        
+    }
+    
+}
+
+class Calculator{
+
+    int Sum(int a,int b){
+        return a+b;
+    }
+
+    float Sum(float a,float b){
+        return a+b;
+    }
+
+    int Sum(int a,int b,int c){
+        return a+b+c;
+    }
+}
+ */
+
+
+//Method Overriding(Run Time Polymorphism)
+
+/* public class OOPS {
+
+    public static void main(String[] args) {
+        Deer d= new Deer();
+        d.Eat();//child class is called
+        
+    }
+}
+
+class Animal{
+    void Eat(){
+        System.out.println("Eats Anything");
+    }
+}
+
+class Deer extends Animal{
+    void Eat(){
+        System.out.println("Eats Grass");
+    }
+}
+ */
+
+
+ //Packages in Java(It is a group of Similar type of classes,interfaces and sub-package)
+
+/* import java.util.*; //in built package in which scanner object is defined
+
+
+ public class OOPS {
+ 
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        int a=sc.nextInt();
+        System.out.println(a);
+        
+    }
+ }
+ */
+//TO make user defined package write, package package-name, then import wherever you want to use
+
+
+//Abstract Class
+
+
+/* public class OOPS {
+
+    public static void main(String[] args) {
+        Horse h=new Horse();
+        h.Walk();
+        System.out.println(h.color);// Animal (parent class constructor will be called first)
+        Chicken c=new Chicken();
+        c.Walk();
+        System.out.println(c.color);// Animal (parent class constructor will be called first)
+
+        //Animal a=new Animal();-- can not make object of abstract class
+        
+    }
+    
+}
+
+abstract class Animal{
+
+    String color;
+    
+    Animal(){
+        color="Red";
+    }
+    void Eat(){
+        System.out.println("Can Eat");
+    };
+
+    abstract void Walk();// defining by derived class as per need in many ways
+
+}
+
+class Horse extends Animal{
+
+    void changeCollorn(){
+        color="Blue";
+    }
+    void Walk(){
+        System.out.println("Can Walk on 4 legs");
+    }
+}
+
+class Chicken extends Animal{
+    void changeCollorn(){
+        color="Black";
+    }
+    void Walk(){
+        System.out.println("Can walk on 2 legs");
+    }
+}
+ */
