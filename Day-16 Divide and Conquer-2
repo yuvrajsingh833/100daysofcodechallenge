@@ -1,0 +1,112 @@
+//Day-16(Divide and Conquer-Module-20)-11/07/2024
+
+ //Quick Sort
+
+ /* public class Divide_Conquer {
+
+    public static void quickSort(int arr[],int si,int ei){
+        if(si>=ei){
+            return;
+        }
+
+        //last element(pivot)
+
+        int pIdx=partition(arr,si,ei);
+        quickSort(arr, si,pIdx-1); //left
+        quickSort(arr, pIdx+1, ei); //right
+
+    }
+
+    public static int partition(int arr[],int si,int ei){
+        int pivot=arr[ei];
+        int i=si-1; //to make place for element smaller than pivot
+
+        for(int j=si;j<ei;j++){
+            if(arr[j]<=pivot){
+                i++;
+
+                //swap
+                int temp=arr[j];
+                arr[j]=arr[i];
+                arr[i]=temp;
+
+            }
+        }
+
+        i++;
+        int temp=pivot;
+        arr[ei]=arr[i];
+        arr[i]=temp;
+        return i;
+    }
+ 
+    public static void main(String[] args) {
+        int arr[]={6,3,9,8,2,5};
+        int si=0;
+        int ei=arr.length-1; ;
+        quickSort(arr, si, ei);
+        for(int i=0;i<arr.length;i++){
+            System.out.print(arr[i]+" ");
+        }
+        System.out.println();
+    }
+ } */
+
+ //Sorted Rotated Array
+
+ /* public class Divide_Conquer {
+    public static int search(int arr[],int si,int ei,int tar){
+
+        //base case
+        if(si>ei){
+            return -1;
+        }
+
+        //find mid
+        int mid=si+(ei-si)/2;
+
+        //case found
+        if(arr[mid]==tar){
+            return mid;
+        }
+
+        //mid on L1
+
+        if(arr[si]<=arr[mid]){
+            //case a: L1 left
+            if(arr[si]<=tar && tar<=arr[mid]){
+               return search(arr, si, mid-1, tar);
+            }else{
+                //case a: L1 Right
+                return search(arr, mid+1, ei, tar);
+            }
+
+        }
+
+        //mid on L2
+        else{
+            //case c: L2 right
+            if(arr[mid]<=tar && tar<=arr[ei]){
+                return search(arr, mid+1, ei, tar);
+            }
+            else{
+                //case d: L2 left
+                return search(arr, si, mid-1, tar);
+            }
+        }
+
+        
+
+    }
+ 
+    public static void main(String[] args) {
+        int arr[]={4,5,6,7,0,1,2};
+        int si=0;
+        int ei=arr.length-1;
+        int target=0;
+        System.out.println( search(arr, si, ei, target));
+
+       
+
+    }
+ } */
