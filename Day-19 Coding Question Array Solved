@@ -1,4 +1,4 @@
-//Day-19 Coding Question Solved
+//Day-19 Coding Question Solved of Array(Binary Search)- T.C.--O(log n)
 
 class Solution {
     public int searchInsert(int[] nums, int target) {
